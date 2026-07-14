@@ -1,68 +1,57 @@
-# 🍔 AI Food Ordering System with AI-Powered Menu Search
+# 🍔 AI Food Ordering System
 
-An intelligent full-stack food ordering application that allows customers to browse menus, place orders, and search for food using natural language. The system also provides an admin dashboard for managing menu items, categories, orders, and analytics.
+An intelligent full-stack food ordering application that allows customers to browse menus, manage their cart, place orders, and receive AI-powered food recommendations using Google's Gemini AI. The application also provides an admin dashboard for managing menu items, categories, and customer orders.
 
 ---
 
 # 🚀 Features
 
-## 👤 Customer
+## 👤 Customer Features
 
 - User Registration & Login (JWT Authentication)
 - Browse Food Menu
-- Search by Categories
-- AI-Powered Natural Language Food Search
+- Search Food Items
+- AI-Powered Food Recommendations
 - Add Items to Cart
 - Update Cart Quantity
 - Remove Items from Cart
 - Place Orders
 - View Order History
-- Responsive UI
+- Responsive User Interface
 
 ---
 
-## 🤖 AI-Powered Menu Search
+## 🤖 AI Food Recommendation
 
-The application uses Google's **Gemini AI** to understand natural language food queries.
+The application integrates **Google Gemini AI** to understand natural language food requests and recommend suitable dishes from the restaurant menu.
 
-Examples:
+### Example Queries
 
 - I am very hungry
 - I want something spicy
-- Sweet under ₹100
-- Healthy vegetarian food
-- Chicken under ₹250
-- Light dinner
-- Dessert
-- Chinese food
+- Suggest a healthy meal
+- Recommend vegetarian food
+- I want chicken dishes
+- Suggest something sweet
+- Light dinner ideas
+- Recommend Chinese food
 
-The AI extracts:
-
-- Food Preference
-- Veg / Non-Veg
-- Budget
-- Category
-- Keywords
-- Health Preference
-- Hunger Level
-
-The backend intelligently filters the menu and returns the most relevant dishes.
+The AI analyzes the user's request and provides personalized food recommendations based on the available menu items.
 
 ---
 
 ## 👨‍💼 Admin Features
 
 - Secure Admin Login
-- Dashboard
+- Dashboard Overview
 - Manage Categories
-- Manage Menu Items
-- Add New Food Items
-- Edit Food Items
-- Delete Food Items
-- View All Orders
+- Add Menu Items
+- Edit Menu Items
+- Delete Menu Items
+- View Customer Orders
 - Update Order Status
-- View Revenue Summary
-- Monitor Customer Orders
+- Revenue Summary
+- Order Statistics
 
 ---
 
@@ -104,13 +93,13 @@ The backend intelligently filters the menu and returns the most relevant dishes.
 
 - Google Gemini API
 - Natural Language Processing
-- Intelligent Food Recommendation
+- AI-Based Food Recommendation
 
 ---
 
 # 📂 Project Structure
 
-```
+```text
 AI-Food-Ordering-System
 │
 ├── backend
@@ -142,7 +131,7 @@ AI-Food-Ordering-System
 
 ---
 
-# ⚙ Installation
+# ⚙️ Installation
 
 ## Clone Repository
 
@@ -150,35 +139,41 @@ AI-Food-Ordering-System
 git clone https://github.com/M-Pushpavathi/-Food-Ordering-System-with-AI-Powered-Menu-Search.git
 ```
 
-```
+```bash
 cd -Food-Ordering-System-with-AI-Powered-Menu-Search
 ```
 
 ---
 
-# Backend Setup
+## Backend Setup
 
-Create virtual environment
+### Create Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-Activate
+### Activate Environment
 
-Windows
+#### Windows
 
 ```bash
 venv\Scripts\activate
 ```
 
-Install packages
+#### Linux / macOS
+
+```bash
+source venv/bin/activate
+```
+
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run backend
+### Run Backend
 
 ```bash
 python run.py
@@ -186,21 +181,21 @@ python run.py
 
 ---
 
-# Frontend Setup
+## Frontend Setup
 
-Navigate
+Navigate to frontend directory
 
 ```bash
 cd frontend
 ```
 
-Install
+Install dependencies
 
 ```bash
 npm install
 ```
 
-Run
+Run frontend
 
 ```bash
 npm run dev
@@ -208,175 +203,180 @@ npm run dev
 
 ---
 
-# Environment Variables
+# 🔑 Environment Variables
 
-Create `.env`
+Create a `.env` file inside the backend folder.
 
-```
+```env
 SECRET_KEY=your_secret_key
 
-JWT_SECRET_KEY=your_jwt_secret
+JWT_SECRET_KEY=your_jwt_secret_key
 
 GEMINI_API_KEY=your_gemini_api_key
 ```
 
 ---
 
-# AI Search Workflow
+# 🤖 AI Recommendation Workflow
 
-```
-User Query
-
-↓
-
-Gemini AI
-
-↓
-
-Extract Preferences
-
-↓
-
-Menu Filtering
-
-↓
-
-Ranking
-
-↓
-
-Recommended Dishes
+```text
+User Enters Natural Language Query
+                │
+                ▼
+      Google Gemini API
+                │
+                ▼
+ Underst
+ands User Intent
+                │
+                ▼
+ Generates Food Recommendations
+                │
+                ▼
+Recommendations Displayed to User
 ```
 
 ---
 
-# Authentication
+# 🔐 Authentication
 
-JWT Authentication is used.
+The application uses **JWT (JSON Web Token)** for secure authentication.
 
-Roles
+### Roles
 
 - Customer
 - Admin
 
 ---
 
-# Order Workflow
+# 🛒 Order Workflow
 
-```
+```text
 Customer
 
-↓
+   │
+
+   ▼
 
 Browse Menu
 
-↓
+   │
 
-Add to Cart
+   ▼
 
-↓
+Add Items to Cart
+
+   │
+
+   ▼
 
 Place Order
 
-↓
+   │
 
-Order Stored
+   ▼
 
-↓
+Order Stored in Database
+
+   │
+
+   ▼
 
 Admin Dashboard
 
-↓
+   │
+
+   ▼
 
 Update Order Status
 ```
 
 ---
 
-# API Modules
+# 📡 API Modules
 
-### Authentication
+## Authentication
 
 - Register
 - Login
 
-### Categories
+## Categories
 
-- Create
-- Update
-- Delete
-- View
+- Create Category
+- Update Category
+- Delete Category
+- View Categories
 
-### Menu
+## Menu
 
-- Add Item
-- Update Item
-- Delete Item
-- List Items
+- Add Menu Item
+- Update Menu Item
+- Delete Menu Item
+- View Menu Items
 
-### Cart
+## Cart
 
-- Add Item
+- Add to Cart
 - Update Quantity
 - Remove Item
+- View Cart
 
-### Orders
+## Orders
 
 - Place Order
 - View Orders
-- Update Status
+- Update Order Status
 
-### AI
+## AI
 
-- Natural Language Search
+- AI Food Recommendation
 
-### Dashboard
+## Dashboard
 
-- Revenue
-- Orders
-- Statistics
+- Revenue Summary
+- Order Statistics
+- Customer Orders
 
 ---
 
-# Screenshots
+# 📸 Screenshots
 
-Add screenshots here.
-
-Example
+Add screenshots of the following pages:
 
 - Login Page
-- Dashboard
-- AI Search
+- Customer Dashboard
 - Menu
+- AI Recommendation
 - Cart
 - Orders
+- Admin Dashboard
 
 ---
 
-# Future Enhancements
+# 🚀 Future Enhancements
 
-- Payment Gateway
+- Online Payment Gateway
 - Live Order Tracking
 - Email Notifications
 - AI Chatbot
-- Voice Search
+- Voice-Based Food Search
 - Personalized Recommendations
-- Restaurant Ratings
+- Restaurant Ratings & Reviews
 - Delivery Tracking
-- Multi Restaurant Support
+- Multi-Restaurant Support
 
 ---
 
-# Author
+# 👨‍💻 Author
 
 **M Pushpavathi**
 
-GitHub
+GitHub:
 
 https://github.com/M-Pushpavathi
 
 ---
 
-# License
+# 📄 License
 
 This project is developed for educational and learning purposes.
